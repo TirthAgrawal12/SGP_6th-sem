@@ -1,0 +1,2 @@
+rootProject.name='Phot-o-Lock'
+include ':app'
