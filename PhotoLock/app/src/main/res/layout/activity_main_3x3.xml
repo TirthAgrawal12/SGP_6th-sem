@@ -1,109 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="3"
-    >
-    <!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/show"
-        android:text="Hello"
-        android:gravity="center"/>
--->
+    android:weightSum="3">
+
     <LinearLayout
         android:id="@+id/linear0"
+        android:layout_weight="1"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_weight="1"
-        >
+        android:weightSum="3">
 
         <ImageButton
-            android:id="@+id/view00"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-             />
+            android:onClick="onClick"
+            android:id="@+id/view00"/>
 
         <ImageButton
-            android:id="@+id/view01"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view01"/>
 
         <ImageButton
-            android:id="@+id/view02"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view02"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear1"
+        android:layout_weight="1"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_weight="1"
-        >
+        android:weightSum="3">
 
         <ImageButton
-            android:id="@+id/view10"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view10"/>
 
         <ImageButton
-            android:id="@+id/view11"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view11"/>
 
         <ImageButton
-            android:id="@+id/view12"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view12"/>
+
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/linear2"
+        android:layout_weight="1"
+
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="3"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:weightSum="3">
 
         <ImageButton
-            android:id="@+id/view20"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view20"/>
 
         <ImageButton
-            android:id="@+id/view21"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view21"/>
 
         <ImageButton
-            android:id="@+id/view22"
+            android:layout_margin="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:id="@+id/view22"/>
+
     </LinearLayout>
+
+
 
 
 </LinearLayout>
