@@ -97,71 +97,71 @@ public class Main_4x4 extends AppCompatActivity {
         switch (view.getId()){
 
             case R.id.view00:
-                ids = "view00";
+                ids = ids+"view00";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view01:
-                ids = "view01";
+                ids = ids+"view01";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view02:
-                ids = "view02";
+                ids = ids+"view02";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view03:
-                ids = "view03";
+                ids = ids+"view03";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view10:
-                ids = "view10";
+                ids = ids+"view10";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view11:
-                ids = "view11";
+                ids = ids+"view11";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view12:
-                ids = "view12";
+                ids = ids+"view12";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view13:
-                ids = "view13";
+                ids = ids+"view13";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view20:
-                ids = "view20";
+                ids = ids+"view20";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view21:
-                ids = "view21";
+                ids = ids+"view21";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view22:
-                ids = "view22";
+                ids = ids+"view22";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view23:
-                ids = "view23";
+                ids = ids+"view23";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view30:
-                ids = "view30";
+                ids = ids+"view30";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view31:
-                ids = "view31";
+                ids = ids+"view31";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view32:
-                ids = "view32";
+                ids = ids+"view32";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view33:
-                ids = "view33";
+                ids = ids+"view33";
                 Log.i("TAG : ",ids);
                 break;
             default:
-                ids = "default";
+                //ids = "default";
                 Log.i("TAG : ",ids);
                 break;
 

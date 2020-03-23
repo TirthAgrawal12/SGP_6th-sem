@@ -3,7 +3,6 @@ package com.example.phot_o_lock;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,10 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -26,14 +22,12 @@ import java.util.ArrayList;
 public class SetLock extends AppCompatActivity {
 
 
-    private static String TAG = "MainActivity";
 
-    ArrayList<Bitmap> pics = new ArrayList<Bitmap>();
+    ArrayList<Bitmap> pics = new ArrayList<>();
     Button open_gallery,create_matrix;
     ImageView imageview;
-    Bitmap currentImage;
-    static int matrix_size;
-    SQLiteDatabase db;
+    static int matrix_size = 3;
+    static Bitmap bitmap;
 
 
 
@@ -44,9 +38,10 @@ public class SetLock extends AppCompatActivity {
 
 
 
-        create_matrix = (Button)findViewById(R.id.intent);
-        open_gallery = (Button)findViewById(R.id.gallery);
-        imageview = (ImageView)findViewById(R.id.imageview);
+
+        create_matrix = findViewById(R.id.intent);
+        open_gallery = findViewById(R.id.gallery);
+        imageview = findViewById(R.id.imageview);
 
         open_gallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +78,7 @@ public class SetLock extends AppCompatActivity {
                     File mypath = new File(directory, s);
                     try {
 
-                        FileOutputStream fos = null;
+                        FileOutputStream fos;
                         fos = new FileOutputStream(mypath);
                         pics.get(i).compress(Bitmap.CompressFormat.PNG, 100, fos);
                         fos.close();
@@ -102,6 +97,8 @@ public class SetLock extends AppCompatActivity {
                     String path = directory.getAbsolutePath();
                     intent.putExtra("Final_Path",path);
                     startActivity(intent);
+
+                    Log.i("INFO : ",""+new Database(getApplicationContext()).getPassword());
 
                 }
                 else if(matrix_size == 4){
@@ -132,9 +129,15 @@ public class SetLock extends AppCompatActivity {
 
                 }
 
+                storeImageInDatabase();
+
+//                Database database = new Database(getApplicationContext());
+//                database.storeImage(new ModelClass("password",bitmap));
+//
 
             }
         });
+
 
 
     }
@@ -177,6 +180,10 @@ public class SetLock extends AppCompatActivity {
         return matrix_size;
     }
 
+    public void storeImageInDatabase(){
+        Database database = new Database(this);
+        database.storeImage(new ModelClass("password",bitmap,matrix_size));
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -188,17 +195,19 @@ public class SetLock extends AppCompatActivity {
 
             try {
 
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                //IMAGE CONVERTED TO BYTE ARRAY...
-                byte[] byteArray = stream.toByteArray();
-
-
-                Database database = new Database(this);
-                database.storeImage(new ModelClass("password",bitmap));
-
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+//
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                //IMAGE CONVERTED TO BYTE ARRAY...
+//                byte[] byteArray = stream.toByteArray();
+//
+//
+//                Database database = new Database(this);
+//                database.storeImage(new ModelClass("password",bitmap));
+//
+//                bitmap = database.fetchImage();
+               // ModelClass modelClass = new ModelClass("Password",bitmap,matrix_size);
 
                 imageview.setImageBitmap(bitmap);
 
@@ -209,6 +218,7 @@ public class SetLock extends AppCompatActivity {
             }
         }
     }
+
 }
 
 

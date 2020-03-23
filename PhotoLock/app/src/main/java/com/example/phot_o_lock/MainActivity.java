@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setLock = (Button)findViewById(R.id.setLock);
-        changeLock = (Button)findViewById(R.id.changeLock);
+        setLock = findViewById(R.id.setLock);
+        changeLock = findViewById(R.id.changeLock);
 
         setLock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +25,20 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, SetLock.class);
                 startActivity(intent);
+                finish();
+
+            }
+        });
+
+        changeLock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, AppList.class);
+                startActivity(intent);
+//                finish();
+
+
 
             }
         });

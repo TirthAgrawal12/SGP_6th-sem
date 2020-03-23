@@ -1,22 +1,15 @@
 package com.example.phot_o_lock;
 
-
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
-import java.util.Collections;
 
 
-public class SplitImage{
+class SplitImage{
 
-   // int chunkNumbers = 9;
-    ArrayList<Bitmap> chunkedImages;
-
-    public ArrayList<Bitmap> splitImage(ImageView image, int chunkNumbers) {
+    ArrayList<Bitmap> splitImage(ImageView image, int chunkNumbers) {
 
         //For the number of rows and columns of the grid to be displayed
         int rows,cols;
@@ -25,7 +18,8 @@ public class SplitImage{
         int chunkHeight,chunkWidth;
 
         //To store all the small image chunks in bitmap format in this list
-        chunkedImages = new ArrayList<Bitmap>(chunkNumbers);
+        // int chunkNumbers = 9;
+        ArrayList<Bitmap> chunkedImages = new ArrayList<>(chunkNumbers);
 
         //Getting the scaled bitmap of the source image
         BitmapDrawable drawable = (BitmapDrawable) image.getDrawable();
@@ -58,34 +52,10 @@ public class SplitImage{
 
 
         return chunkedImages;
-     //   return mergeImage(chunkedImages);
 
     }
 
-    Bitmap mergeImage(ArrayList<Bitmap> imageChunks) {
 
-        Collections.shuffle(imageChunks);
-
-        //Get the width and height of the smaller chunks
-        int chunkWidth = imageChunks.get(0).getWidth();
-        int chunkHeight = imageChunks.get(0).getHeight();
-
-        //create a bitmap of a size which can hold the complete image after merging
-        Bitmap bitmap = Bitmap.createBitmap(chunkWidth * 5, chunkHeight * 5,  Bitmap.Config.ARGB_4444);
-
-        //create a canvas for drawing all those small images
-        Canvas canvas = new Canvas(bitmap);
-        int count = 0;
-        for(int rows = 0; rows < 5; rows++){
-            for(int cols = 0; cols < 5; cols++){
-                canvas.drawBitmap(imageChunks.get(count), chunkWidth * cols, chunkHeight * rows, null);
-                count++;
-            }
-        }
-
-
-        return bitmap;
-    }
 }
 
 

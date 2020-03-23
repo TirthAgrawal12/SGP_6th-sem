@@ -1,16 +1,15 @@
 package com.example.phot_o_lock;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 public class Main_3x3 extends AppCompatActivity {
 
     ImageButton view00,view01,view02,view10,view11,view12,view20,view21,view22;
-    TextView show;
-    String ids="";
+    static String ids="";
+    Button setLock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +27,18 @@ public class Main_3x3 extends AppCompatActivity {
         setContentView(R.layout.activity_main_3x3);
 
 
+        final Context context = this;
+        setLock = findViewById(R.id.setLock);
+
+        setLock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Database db = new Database(context);
+                db.setPassword(ids);
+                finish();
+
+            }
+        });
 
         view00 = findViewById(R.id.view00);
         view01 = findViewById(R.id.view01);
@@ -79,39 +90,39 @@ public class Main_3x3 extends AppCompatActivity {
         switch (view.getId()){
 
             case R.id.view00:
-                ids = "view00";
+                ids = ids+"view00";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view01:
-                ids = "view01";
+                ids = ids+"view01";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view02:
-                ids = "view02";
+                ids = ids+"view02";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view10:
-                ids = "view10";
+                ids = ids+"view10";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view11:
-                ids = "view11";
+                ids = ids+"view11";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view12:
-                ids = "view12";
+                ids = ids+"view12";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view20:
-                ids = "view20";
+                ids = ids+"view20";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view21:
-                ids = "view21";
+                ids = ids+"view21";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view22:
-                ids = "view22";
+                ids = ids+"view22";
                 Log.i("TAG : ",ids);
                 break;
             default:

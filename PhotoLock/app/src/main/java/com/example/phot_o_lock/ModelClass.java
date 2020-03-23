@@ -2,30 +2,28 @@ package com.example.phot_o_lock;
 
 import android.graphics.Bitmap;
 
-public class ModelClass {
+class ModelClass {
 
     private String imageName;
     private Bitmap image;
+    private int matrixSize;
 
-    public ModelClass(String imageName, Bitmap image){
+    ModelClass(String imageName, Bitmap image, int matrixSize){
         this.image = image;
         this.imageName = imageName;
+        this.matrixSize = matrixSize;
     }
 
-    public String getImageName(){
+    String getImageName(){
         return imageName;
     }
 
-    public Bitmap getImage(){
+    Bitmap getImage(){
         return image;
     }
 
-    public void setImageName(String imageName){
-        this.imageName = imageName;
-
+    int getMatrixSize(){
+        return matrixSize;
     }
 
-    public void setImage(Bitmap image){
-        this.image = image;
-    }
 }

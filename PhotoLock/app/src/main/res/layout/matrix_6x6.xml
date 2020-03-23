@@ -383,5 +383,12 @@
             android:id="@+id/view55"/>
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Lock"
+        android:gravity="center"
+        android:id="@+id/setLock"
+        />
 
 </LinearLayout>

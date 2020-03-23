@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Phot-o-Lock</string>
+    <string name="change_lock">Change Lock</string>
+    <string name="set_lock">Set Lock</string>
 </resources>

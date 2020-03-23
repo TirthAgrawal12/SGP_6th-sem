@@ -145,151 +145,151 @@ public class Main_6x6 extends AppCompatActivity {
         switch (view.getId()){
 
             case R.id.view00:
-                ids = "view00";
+                ids = ids+"view00";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view01:
-                ids = "view01";
+                ids = ids+"view01";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view02:
-                ids = "view02";
+                ids = ids+"view02";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view03:
-                ids = "view03";
+                ids = ids+"view03";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view04:
-                ids = "view04";
+                ids = ids+"view04";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view05:
-                ids = "view05";
+                ids = ids+"view05";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view10:
-                ids = "view10";
+                ids = ids+"view10";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view11:
-                ids = "view11";
+                ids = ids+"view11";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view12:
-                ids = "view12";
+                ids = ids+"view12";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view13:
-                ids = "view13";
+                ids = ids+"view13";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view14:
-                ids = "view14";
+                ids = ids+"view14";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view15:
-                ids = "view15";
+                ids = ids+"view15";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view20:
-                ids = "view20";
+                ids = ids+"view20";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view21:
-                ids = "view21";
+                ids = ids+"view21";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view22:
-                ids = "view22";
+                ids = ids+"view22";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view23:
-                ids = "view23";
+                ids = ids+"view23";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view24:
-                ids = "view24";
+                ids = ids+"view24";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view25:
-                ids = "view25";
+                ids = ids+"view25";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view30:
-                ids = "view30";
+                ids = ids+"view30";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view31:
-                ids = "view31";
+                ids = ids+"view31";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view32:
-                ids = "view32";
+                ids = ids+"view32";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view33:
-                ids = "view33";
+                ids = ids+"view33";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view34:
-                ids = "view34";
+                ids = ids+"view34";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view35:
-                ids = "view35";
+                ids = ids+"view35";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view40:
-                ids = "view40";
+                ids = ids+"view40";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view41:
-                ids = "view41";
+                ids = ids+"view41";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view42:
-                ids = "view42";
+                ids = ids+"view42";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view43:
-                ids = "view43";
+                ids = ids+"view43";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view44:
-                ids = "view44";
+                ids = ids+"view44";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view45:
-                ids = "view45";
+                ids = ids+"view45";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view50:
-                ids = "view50";
+                ids = ids+"view50";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view51:
-                ids = "view51";
+                ids = ids+"view51";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view52:
-                ids = "view52";
+                ids = ids+"view52";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view53:
-                ids = "view53";
+                ids = ids+"view53";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view54:
-                ids = "view54";
+                ids = ids+"view54";
                 Log.i("TAG : ",ids);
                 break;
             case R.id.view55:
-                ids = "view55";
+                ids = ids+"view55";
                 Log.i("TAG : ",ids);
                 break;
             default:
-                ids = "default";
+//                ids = "default";
                 Log.i("TAG : ",ids);
                 break;
 
