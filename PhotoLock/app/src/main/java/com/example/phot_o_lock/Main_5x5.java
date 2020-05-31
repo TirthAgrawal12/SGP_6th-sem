@@ -21,6 +21,7 @@ public class Main_5x5 extends AppCompatActivity {
             view22,view23,view24,view30,view31,view32,view33,view34,view40,view41,view42,view43,
             view44;
     String ids="";
+    static int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,114 +117,148 @@ public class Main_5x5 extends AppCompatActivity {
 
     }
 
-    public void onClick(View view){
+    public void onClick5(View view){
+
+
         switch (view.getId()){
 
             case R.id.view00:
                 ids = ids+"view00";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view01:
                 ids = ids+"view01";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view02:
                 ids = ids+"view02";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view03:
                 ids = ids+"view03";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view04:
                 ids = ids+"view04";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view10:
                 ids = ids+"view10";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view11:
                 ids = ids+"view11";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view12:
                 ids = ids+"view12";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view13:
                 ids = ids+"view13";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view14:
                 ids = ids+"view14";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view20:
                 ids = ids+"view20";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view21:
                 ids = ids+"view21";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view22:
                 ids = ids+"view22";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view23:
                 ids = ids+"view23";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view24:
                 ids = ids+"view24";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view30:
                 ids = ids+"view30";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view31:
                 ids = ids+"view31";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view32:
                 ids = ids+"view32";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view33:
                 ids = ids+"view33";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view34:
                 ids = ids+"view34";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view40:
                 ids = ids+"view40";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view41:
                 ids = ids+"view41";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view42:
                 ids = ids+"view42";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view43:
                 ids = ids+"view43";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view44:
                 ids = ids+"view44";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             default:
                 //ids = ids+"default";
                 Log.i("TAG : ","KUCH NAHI HO RAHA HAI...");
                 break;
 
+
+        }
+        if (count == 4){
+            Password_Database database = new Password_Database(this);
+            database.insertData(ids,null);
+
+            startActivity(new Intent(Main_5x5.this,lockapp_activity.class));
 
         }
 

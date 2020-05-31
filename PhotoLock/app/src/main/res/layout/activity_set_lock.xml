@@ -5,75 +5,116 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/first_layer">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/gallery"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/photolock" />
 
     <Button
         android:id="@+id/gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/txt"
-        android:layout_margin="10dp"
-        android:text="Select Image" />
-
-    <Button
-        android:id="@+id/intent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
-        android:text="Create Matrix" />
-
-    <ImageView
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:id="@+id/imageview"
-        android:layout_margin="10dp"
-        android:layout_above="@id/gallery"/>
+        android:layout_above="@id/matrix_txt"
+        android:text="Select Image"
+        android:background="@drawable/btneffect"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/radio"
         android:text="Select Matrix..."
-        android:layout_margin="10dp"
-        android:id="@+id/txt"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18dp"
+        android:textColor="#36469F"
+        android:id="@+id/matrix_txt"
+        android:textStyle="bold"/>
+
+
 
     <RadioGroup
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/radio"
+        android:weightSum="4"
         android:layout_above="@id/intent">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:id="@+id/matrix_3x3"
+            android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="3X3"/>
+            android:text="3X3"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#36469F"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:id="@+id/matrix_4x4"
+            android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="4X4"/>
+            android:text="4X4"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#36469F"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:id="@+id/matrix_5x5"
+            android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="5X5"/>
+            android:text="5X5"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#36469F"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:id="@+id/matrix_6x6"
+            android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
-            android:text="6X6"/>
+            android:text="6X6"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#36469F"/>
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="set Pattern"
+        android:background="@drawable/btneffect"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"/>
 </RelativeLayout>

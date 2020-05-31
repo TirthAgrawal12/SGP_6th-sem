@@ -3,6 +3,7 @@ package com.example.phot_o_lock;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -90,19 +93,33 @@ public class SetLock extends AppCompatActivity {
                     }
                 }
 
+                Model.setPath(directory);
+                Password_Database db = new Password_Database(SetLock.this);
+                db.insertPath(directory.getAbsolutePath());
+                ArrayList<String> temp = new ArrayList<String>();
+                Cursor res = db.getAllData();
+                while (res.moveToNext()){
+
+                    temp.add(res.getString(1));
+                }
+                for (int i=0;i<temp.size();i++){
+//                Log.i("PATH : ........",temp.get(i));
+                }
                 if (matrix_size == 3){
 
+                    new Model().setMatrixSize(3);
                     Intent intent = new Intent(SetLock.this,Main_3x3.class);
 
                     String path = directory.getAbsolutePath();
                     intent.putExtra("Final_Path",path);
                     startActivity(intent);
 
-                    Log.i("INFO : ",""+new Database(getApplicationContext()).getPassword());
+//                    Log.i("INFO : ",""+new Database(getApplicationContext()).getPassword());
 
                 }
                 else if(matrix_size == 4){
 
+                    new Model().setMatrixSize(4);
                     Intent intent = new Intent(SetLock.this,Main_4x4.class);
 
                     String path = directory.getAbsolutePath();
@@ -112,6 +129,7 @@ public class SetLock extends AppCompatActivity {
                 }
                 else if(matrix_size == 5){
 
+                    new Model().setMatrixSize(5);
                     Intent intent = new Intent(SetLock.this,Main_5x5.class);
 
                     String path = directory.getAbsolutePath();
@@ -121,6 +139,7 @@ public class SetLock extends AppCompatActivity {
                 }
                 else{
 
+                    new Model().setMatrixSize(6);
                     Intent intent = new Intent(SetLock.this,Main_6x6.class);
 
                     String path = directory.getAbsolutePath();
@@ -129,7 +148,7 @@ public class SetLock extends AppCompatActivity {
 
                 }
 
-                storeImageInDatabase();
+//                storeImageInDatabase();
 
 //                Database database = new Database(getApplicationContext());
 //                database.storeImage(new ModelClass("password",bitmap));
@@ -179,11 +198,11 @@ public class SetLock extends AppCompatActivity {
         }
         return matrix_size;
     }
-
-    public void storeImageInDatabase(){
-        Database database = new Database(this);
-        database.storeImage(new ModelClass("password",bitmap,matrix_size));
-    }
+//
+//    public void storeImageInDatabase(){
+//        Database database = new Database(this);
+//        database.storeImage(new ModelClass("password",bitmap,matrix_size));
+//    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {

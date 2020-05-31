@@ -1,44 +1,35 @@
 package com.example.phot_o_lock;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import java.util.List;
 
-public class AppAdapter extends ArrayAdapter<ApplicationInfo> {
+public class AppAdapter extends BaseAdapter {
 
-    private List<ApplicationInfo> appList = null;
-    private Context context;
-    private PackageManager packageManager;
+    // get icon or name from android devices
 
-    public AppAdapter(@NonNull Context context, int resource, @NonNull List<ApplicationInfo> objects) {
-        super(context, resource, objects);
+    private LayoutInflater layoutInflater; // used for layout
+    private List<AppList> listStorage;     // class used as list
 
-        this.context = context;
-        this.appList = objects;
-        packageManager = context.getPackageManager();
-
+    public AppAdapter(Context context, List<AppList> customizedListView) {
+        layoutInflater =(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        listStorage = customizedListView;
     }
 
     @Override
     public int getCount() {
-        return ((null != appList) ? appList.size() : 0);
+        return listStorage.size();
     }
 
-    @Nullable
     @Override
-    public ApplicationInfo getItem(int position) {
-        return ((null != appList ? appList.get(position) : null));
+    public Object getItem(int position) {
+        return position;
     }
 
     @Override
@@ -46,28 +37,44 @@ public class AppAdapter extends ArrayAdapter<ApplicationInfo> {
         return position;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = convertView;
+        ViewHolder listViewHolder;
+        if(convertView == null){
 
-        if (null == view){
-            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.activity_app_list, null);
+            // it all about dynamic view
+
+
+            listViewHolder = new ViewHolder();
+            convertView = layoutInflater.inflate(R.layout.installed_app_list, parent, false);
+
+            // get name or icon
+            // or return view
+            listViewHolder.textInListView = (TextView)convertView.findViewById(R.id.list_app_name);
+            listViewHolder.imageInListView = (ImageView)convertView.findViewById(R.id.app_icon);
+            listViewHolder.lockInListView = (ImageView)convertView.findViewById(R.id.lock_icon);
+
+
+            convertView.setTag(listViewHolder);
         }
 
-        ApplicationInfo data = appList.get(position);
-        if (null != data){
-            TextView appName = (TextView)view.findViewById(R.id.app_name);
-            TextView packageName = (TextView)view.findViewById(R.id.app_package);
-            ImageView iconView = (ImageView)view.findViewById(R.id.app_icon);
-
-            appName.setText(data.loadLabel(packageManager));
-            packageName.setText(data.packageName);
-            iconView.setImageDrawable(data.loadIcon(packageManager));
+        else{
+            listViewHolder = (ViewHolder)convertView.getTag();
         }
+        listViewHolder.textInListView.setText(listStorage.get(position).getName());
+        listViewHolder.imageInListView.setImageDrawable(listStorage.get(position).getIcon());
+        listViewHolder.lockInListView.setImageResource(listStorage.get(position).getLocked());
 
-        return view;
+        return convertView;
+    }
+
+    static class ViewHolder{
+
+        // view contain two things name or icon
+
+        TextView textInListView;
+        ImageView imageInListView;
+        ImageView lockInListView;
     }
 }

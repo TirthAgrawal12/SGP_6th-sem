@@ -4,10 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 
-class SplitImage{
+class SplitImage {
 
     ArrayList<Bitmap> splitImage(ImageView image, int chunkNumbers) {
 

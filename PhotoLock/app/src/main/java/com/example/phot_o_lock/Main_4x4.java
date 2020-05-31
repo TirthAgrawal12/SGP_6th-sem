@@ -19,6 +19,7 @@ public class Main_4x4 extends AppCompatActivity {
 
     ImageButton view00,view01,view02,view03,view10,view11,view12,view13,view20,view21,view22,view23,view30,view31,view32,view33;
     String ids="";
+    static int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,81 +94,104 @@ public class Main_4x4 extends AppCompatActivity {
 
     }
 
-    public void onClick(View view){
+    public void onClick4(View view){
+
+
         switch (view.getId()){
 
             case R.id.view00:
                 ids = ids+"view00";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view01:
                 ids = ids+"view01";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view02:
                 ids = ids+"view02";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view03:
                 ids = ids+"view03";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view10:
                 ids = ids+"view10";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view11:
                 ids = ids+"view11";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view12:
                 ids = ids+"view12";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view13:
                 ids = ids+"view13";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view20:
                 ids = ids+"view20";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view21:
                 ids = ids+"view21";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view22:
                 ids = ids+"view22";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view23:
                 ids = ids+"view23";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view30:
                 ids = ids+"view30";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view31:
                 ids = ids+"view31";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view32:
                 ids = ids+"view32";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             case R.id.view33:
                 ids = ids+"view33";
                 Log.i("TAG : ",ids);
+                count++;
                 break;
             default:
                 //ids = "default";
                 Log.i("TAG : ",ids);
                 break;
 
+        }
+        if (count == 4){
+            Password_Database database = new Password_Database(this);
+            database.insertData(ids,null);
+
+            startActivity(new Intent(Main_4x4.this,lockapp_activity.class));
 
         }
-
 
     }
 

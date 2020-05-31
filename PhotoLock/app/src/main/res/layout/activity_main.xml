@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/first_layer"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/photolock"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/imageView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/autour_one"
+        android:gravity="center_horizontal"
+        android:text="Phot-O-Lock"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#1D2FA5"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,23 +35,36 @@
         android:layout_centerInParent="true"
         android:orientation="vertical"
         android:weightSum="2"
-        tools:ignore="UselessParent">
+        tools:ignore="UselessParent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/set_lock"
+            android:text="set lock"
             android:id="@+id/setLock"
             android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/btneffect"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="17dp"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/change_lock"
+            android:text="change lock"
             android:id="@+id/changeLock"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:background="@drawable/btneffect"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textSize="17dp"/>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
